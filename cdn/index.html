@@ -7,7 +7,7 @@
 </head>
 <body>
     <!-- 2. 최상위(루트) 태그 -->
-    <div id="root">여기 기록 내용이 출력된다.</div>
+    <div id="root"></div>
 
     <!-- 1. 리액트 라이브러리 -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
@@ -19,26 +19,19 @@
     <!-- 3. React 코드 작성 영역 -->
     <script type="text/babel">
       // 함수형 컴포넌트 정의
-    //   function App() {
-    //     // JSX를 반환 => 화면에 렌더링될 내용
-    //     return <h1>Hello3</h1>;
-    //   }
+      function App() {
+        // JSX를 반환 => 화면에 렌더링될 내용
+        return <h1>Hello3</h1>;
+      }
 
-      // App(); -> JS 함수 호출
-      // <App /> -> 리액트 호출
-      // ReactDOM을 통해 App 컴포넌트를 root에 렌더링
-      // createRoot() 이란? 리액트 18버전에서 새롭게 추가된 기능으로,
-      // 리액트 애플리케이션의 루트 DOM 노드를 생성하는 역할
-      // 객체.render();
-    //   const root = ReactDOM.createRoot(document.getElementById('root'));
-    //   root.render(<h1>Hello5</h1>);
-
-    // ReactDOM 객체의 createRoot 메서드를 사용하여
-    // 'root'라는 id를 가진 DOM 요소에 
-    // 리액트 컴포넌트를 렌더링 -> render 메서드를 통해 인자를 루트에 전달한다.
-ReactDOM.createRoot(document.getElementById('root')).render(<h1>Hello5</h1>);
-
-//root.render(<App />);
+      // createRoot(루트객체)
+      //  - 리액트 18버전에서 새롭게 추가된 기능으로,
+      //  - 리액트 애플리케이션의 루트 DOM 노드를 생성하는 역할
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      // render(XML요소)
+      //  - 리액트 컴포넌트를 렌더링 -> render 메서드 인자를 루트에 전달한다.
+      // <App /> -> 리액트 컴포넌트 호출
+      root.render(<App />);
     </script>
 </body>
 </html>
